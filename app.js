@@ -18,7 +18,7 @@ app.use(async ctx => {
   if (!FILE_TYPE.split(',').includes(files['image'].type)) return ctx.throw(400, '图片类型错误')
   // 创建可读流
   const reader = fs.createReadStream(files['image']['path']);
-  let filePath = `/Users/vongola/Documents/vongola/${files['image']['name']}`;
+  let filePath = `/home/pic/${files['image']['name']}`;
   let remotefilePath = `http://www.xxxx.com:8887/img/my_blog_img` + `/${files['image']['name']}`;
   // 创建可写流
   const upStream = fs.createWriteStream(filePath);
