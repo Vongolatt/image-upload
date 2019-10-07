@@ -1,0 +1,31 @@
+{
+  "name": "image-upload",
+  "version": "1.0.0",
+  "description": "image-upload based koa",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vongolatt/image-upload.git"
+  },
+  "keywords": [
+    "koa",
+    "upload"
+  ],
+  "author": "Vongola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vongolatt/image-upload/issues"
+  },
+  "homepage": "https://github.com/Vongolatt/image-upload#readme",
+  "dependencies": {
+    "koa": "^2.8.2",
+    "koa-body": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-html": "^6.0.0"
+  }
+}
