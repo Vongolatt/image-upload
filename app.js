@@ -13,6 +13,7 @@ app.use(koaBody({
 app.use(async ctx => {
   let { files, method } = ctx.request; // 获取上传文件
   if (method !== 'POST') return ctx.throw(404, 'Not found')
+  if (!files) return ctx.throw(400, '请传人图片')
   // 验证图片类型
   if (!FILE_TYPE.split(',').includes(files['image'].type)) return ctx.throw(400, '图片类型错误')
   // 创建可读流
