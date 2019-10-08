@@ -4,9 +4,9 @@ const app = new Koa()
 const koaBody = require('koa-body') //解析上传文件的插件
 const { MAX_SIZE, FILE_TYPE } = require('./config')
 
-const path = require('path')
+const Path = require('path')
 const serve = require('koa-static')
-app.use(serve(path.join(__dirname)+'/pic/'))
+app.use(serve(Path.join(__dirname, '/pic/')))
 
 app.use(koaBody({
   multipart: true,
@@ -23,7 +23,7 @@ app.use(async ctx => {
   if (!FILE_TYPE.split(',').includes(files['image'].type)) return ctx.throw(400, '图片类型错误')
   // 创建可读流
   const reader = fs.createReadStream(files['image']['path'])
-  let filePath = `./pic/${files['image']['name']}`
+  let filePath = Path.join(__dirname, `./pic/${files['image']['name']}`)
   let remotefilePath = `/${files['image']['name']}`
   // 创建可写流
   const upStream = fs.createWriteStream(filePath);
